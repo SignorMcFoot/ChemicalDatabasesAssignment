@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane alignment="center" hgap="10" prefHeight="547.0" prefWidth="860.0" vgap="10"
+          xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0"/>
+        <ColumnConstraints maxWidth="680.8" minWidth="680.6" prefWidth="680.8"/>
+        <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <TableView fx:id="tableview" prefHeight="466.0" prefWidth="781.0" GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"/>
+        <AnchorPane fx:id="anch1" prefHeight="162.0" prefWidth="681.0" GridPane.columnIndex="1">
+            <children>
+                <Button fx:id="loader" layoutX="590.0" layoutY="71.0" mnemonicParsing="false" onAction="#buildData"
+                        text="Load Data"/>
+                <TextField fx:id="path" layoutX="106.0" layoutY="13.0" prefHeight="26.0" prefWidth="428.0"/>
+                <TextField fx:id="dbid" layoutX="106.0" layoutY="43.0" prefHeight="26.0" prefWidth="428.0"/>
+                <TextField fx:id="rootpswd" layoutX="106.0" layoutY="71.0" prefHeight="26.0" prefWidth="428.0"/>
+                <Text fx:id="sdftext" layoutX="16.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="SDF File Path"/>
+                <Text fx:id="dbtext" layoutX="14.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Database URL"/>
+                <Text fx:id="usertext" layoutX="12.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="User Password"/>
+                <ProgressBar fx:id="progBar" layoutX="107.0" layoutY="103.0" prefHeight="18.0" prefWidth="428.0"
+                             progress="0.0"/>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anch2" disable="true" prefHeight="117.0" prefWidth="706.0" visible="false"
+                    GridPane.columnIndex="1">
+            <children>
+                <Button fx:id="filter" layoutX="536.0" layoutY="91.0" mnemonicParsing="false" onAction="#queryFilter"
+                        text="Filter"/>
+                <Button fx:id="saveCSV" layoutX="587.0" layoutY="91.0" mnemonicParsing="false" onAction="#saveCSV"
+                        text="Save to CSV"/>
+                <TextField fx:id="massField" layoutX="57.0" layoutY="14.0" promptText="Less than"/>
+                <TextField fx:id="logPfield" layoutX="57.0" layoutY="39.0" promptText="Less than"/>
+                <TextField fx:id="logDdown" layoutX="57.0" layoutY="65.0" promptText="More than"/>
+                <TextField fx:id="donorCount" layoutX="291.0" layoutY="13.0" promptText="Less than"/>
+                <TextField fx:id="acceptorCount" layoutX="291.0" layoutY="39.0" promptText="Less than"/>
+                <Text layoutX="217.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+                <TextField fx:id="logDup" layoutX="58.0" layoutY="91.0" promptText="Less than"/>
+                <TextField fx:id="rotatorField" layoutX="291.0" layoutY="64.0" promptText="Less than"/>
+                <TextField fx:id="psaField" layoutX="291.0" layoutY="91.0" promptText="Less than"/>
+                <TextField fx:id="ringField" layoutX="531.0" layoutY="14.0" promptText="Less than"/>
+                <TextField fx:id="aromaDownField" layoutX="531.0" layoutY="39.0" promptText="Less than"/>
+                <TextField fx:id="aromaUpField" layoutX="531.0" layoutY="64.0" promptText="More than"/>
+                <RadioButton fx:id="massBool" layoutX="8.0" layoutY="19.0" mnemonicParsing="false" selected="true"
+                             text="Mass"/>
+                <RadioButton fx:id="logPBool" layoutX="8.0" layoutY="43.0" mnemonicParsing="false" selected="true"
+                             text="LogP"/>
+                <RadioButton fx:id="logDBool" layoutX="8.0" layoutY="68.0" mnemonicParsing="false" selected="true"
+                             text="LogD"/>
+                <RadioButton fx:id="donoBool" layoutX="212.0" layoutY="18.0" mnemonicParsing="false" selected="true"
+                             text="H Donors"/>
+                <RadioButton fx:id="acceptBool" layoutX="212.0" layoutY="41.0" mnemonicParsing="false" selected="true"
+                             text="H Accept"/>
+                <RadioButton fx:id="rotaBool" layoutX="212.0" layoutY="68.0" mnemonicParsing="false" selected="true"
+                             text="Rot. Bonds"/>
+                <RadioButton fx:id="psaBool" layoutX="212.0" layoutY="94.0" mnemonicParsing="false" selected="true"
+                             text="PSA"/>
+                <RadioButton fx:id="ringBool" layoutX="441.0" layoutY="17.0" mnemonicParsing="false" selected="true"
+                             text="Ring Count"/>
+                <RadioButton fx:id="aromaBool" layoutX="441.0" layoutY="43.0" mnemonicParsing="false" prefHeight="52.0"
+                             prefWidth="94.0" selected="true" text="Fused Aroma. Ring Count" wrapText="true"/>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>
